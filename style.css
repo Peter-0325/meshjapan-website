@@ -116,7 +116,7 @@ h2 {
 /* --- 홈 섹션 (Hero) --- */
 #home {
     /* 새로운 배경 이미지와 스타일 적용 */
-    background-image: linear-gradient(rgba(26, 62, 92, 0.7), rgba(26, 62, 92, 0.7)), url('https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-image: linear-gradient(rgba(26, 62, 92, 0.7), rgba(26, 62, 92, 0.7)), url('./bg.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
