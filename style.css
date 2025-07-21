@@ -301,3 +301,17 @@ footer a:hover {
         font-size: 1.2rem;
     }
 }
+/* 태블릿 대응 */
+@media (max-width: 1024px) and (min-width: 769px) {
+    #home {
+        height: 60vh;
+    }
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+    ...
+    #home {
+        height: 50vh;
+    }
+}
