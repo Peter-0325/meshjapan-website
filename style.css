@@ -1,7 +1,7 @@
 /* --- 기본 설정 --- */
 :root {
-    --primary-color: #1A3E5C; /* 로고의 진한 파란색 */
-    --secondary-color: #2F9C7F; /* 로고의 녹색 */
+    --primary-color: #1A3E5C;
+    --secondary-color: #2F9C7F;
     --text-color: #333;
     --bg-color: #FFFFFF;
     --light-gray-bg: #f8f9fa;
@@ -84,9 +84,19 @@ nav ul li a.store-link:hover {
     color: white;
 }
 
+/* --- 메뉴 토글 버튼 (모바일용) --- */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
 /* --- 메인 & 섹션 공통 --- */
 main {
-    padding-top: 70px; /* 고정 헤더 높이만큼 */
+    padding-top: 70px;
 }
 
 section {
@@ -113,9 +123,8 @@ h2 {
     margin: 0 auto 50px;
 }
 
-/* --- 홈 섹션 (Hero) --- */
+/* --- 홈 섹션 --- */
 #home {
-    /* 새로운 배경 이미지와 스타일 적용 */
     background-image: linear-gradient(rgba(26, 62, 92, 0.7), rgba(26, 62, 92, 0.7)), url('./bg.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-size: cover;
     background-position: center;
@@ -140,7 +149,7 @@ h2 {
     font-weight: 300;
 }
 
-/* --- 회사소개 섹션 --- */
+/* --- 회사소개 --- */
 #about {
     background-color: var(--light-gray-bg);
 }
@@ -169,8 +178,7 @@ h2 {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-
-/* --- 제품소개 섹션 --- */
+/* --- 제품소개 --- */
 .product-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -203,14 +211,14 @@ h2 {
     color: var(--primary-color);
 }
 
-
-/* --- 문의하기 섹션 --- */
+/* --- 문의하기 --- */
 #contact {
     background-color: var(--primary-color);
     color: white;
 }
 
-#contact h2, #contact .section-description {
+#contact h2,
+#contact .section-description {
     color: white;
 }
 
@@ -228,10 +236,6 @@ h2 {
     margin-bottom: 15px;
 }
 
-.contact-info p:last-child {
-    margin-bottom: 0;
-}
-
 /* --- 푸터 --- */
 footer {
     background-color: #222;
@@ -240,13 +244,16 @@ footer {
     text-align: center;
     font-size: 0.9rem;
 }
+
 footer p {
     margin-bottom: 10px;
 }
+
 footer a {
     color: #fff;
     text-decoration: none;
 }
+
 footer a:hover {
     text-decoration: underline;
 }
@@ -256,12 +263,36 @@ footer a:hover {
     .about-content {
         flex-direction: column;
     }
-    nav ul {
-        display: none; /* 모바일에서는 메뉴 숨김 (추후 햄버거 메뉴로 확장 가능) */
+
+    .menu-toggle {
+        display: block;
     }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    body.menu-open nav ul {
+        display: flex;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        z-index: 1001;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
+
     .hero-content .subtitle {
         font-size: 1.2rem;
     }
